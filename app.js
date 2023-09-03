@@ -27,7 +27,7 @@ app.set("views", path.join(__dirname, "views"));
 
 const PORT = process.env.PORT || 5000;
 
-const t2 = `mongodb://amoghpnivas:${process.env.MONGODB_PWD}@ac-9r8jibh-shard-00-00.yeabb6z.mongodb.net:27017,ac-9r8jibh-shard-00-01.yeabb6z.mongodb.net:27017,ac-9r8jibh-shard-00-02.yeabb6z.mongodb.net:27017/roadmap-chatbot-db?ssl=true&replicaSet=atlas-az3rxw-shard-0&authSource=admin&retryWrites=true&w=majority`;
+const t2 = process.env.MONGODB_URI;
 
 mongoose
   .connect(t2)
