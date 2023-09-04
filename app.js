@@ -28,6 +28,7 @@ app.set("views", path.join(__dirname, "views"));
 const PORT = process.env.PORT || 5000;
 
 const t2 = process.env.MONGODB_URI;
+console.log(typeof t2);
 
 mongoose
   .connect(t2)
