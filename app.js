@@ -137,13 +137,15 @@ app.post("/roadmap", async (req, res) => {
 
   console.log(data.resources);
 
-  const steps = data.steps.split("\n").filter((line) => line.trim() != "");
+  let steps = data.steps.split("\n").filter((line) => line.trim() != "");
   const temp = formatRequest(data.prerequisites);
   console.log(temp);
   const resources = formatRequest(data.resources);
   //   const parts = temp.split(":");
   const prerequisites = temp.map((s) => s.split(":")[1].trim());
-
+  if (steps[0] === ".") {
+    steps = steps.slice(1);
+  }
   console.log(steps);
   console.log(prerequisites);
   console.log(resources);
